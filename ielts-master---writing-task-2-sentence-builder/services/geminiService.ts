@@ -3,7 +3,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { PracticeExercise, EvaluationResult, TaskTopic } from "../types";
 import { SYSTEM_INSTRUCTION_GENERATOR, SYSTEM_INSTRUCTION_EVALUATOR } from "../constants";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
 
 export const generateExercise = async (topic: TaskTopic): Promise<PracticeExercise> => {
   const response = await ai.models.generateContent({
